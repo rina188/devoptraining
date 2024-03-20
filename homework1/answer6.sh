@@ -7,7 +7,7 @@ cat /etc/shells
 echo "Hard disk information:"
 df -h
 echo "CPU information:"
-csysctl -n machdep.cpu.brand_string
+sysctl -a | grep machdep.cpu
 echo "Memory information:"
 sysctl -n hw.memsize | awk '{print $0/1073741824 " GB"}'gi
 echo "File system information:"
