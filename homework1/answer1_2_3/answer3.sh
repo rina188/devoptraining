@@ -6,11 +6,11 @@ find "$SCRIPT_DIR" -mindepth 1 -maxdepth 1 -type d | sort -k1,1 | while IFS= rea
     
     # if[ ! -d "$folder" ]; then
 
-        upperCaseFolder=$(echo "$(basename "$folder")" | tr '[:lower:]' '[:upper:]')
+        upperCaseFolder=$(echo "$(basename "$folder")" | tr '[:upper:]' '[:lower:]')
         if [ "$(basename "$folder")" != "$upperCaseFolder" ]; then
             # Rename the folder to its uppercase version
             mv "$folder" "$SCRIPT_DIR/$upperCaseFolder"
         else
-            echo "Folder is already in uppercase: $upperCaseFolder"
+            echo "Folder is already in lowercase: $upperCaseFolder"
         fi
 done
